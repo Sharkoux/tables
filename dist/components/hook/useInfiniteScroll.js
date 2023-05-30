@@ -12,7 +12,7 @@ const useInfiniteScroll = (lazy, firsts, infiniteScroll, allUser, rows, onPage, 
   const handleScroll = entries => {
     const entry = entries[0];
     if (!lazy) {
-      if (entry.isIntersecting && page <= (range === null || range === void 0 ? void 0 : range.length)) {
+      if (entry.isIntersecting && page <= (range === null || range === void 0 ? void 0 : range?.length)) {
         setPage(page + 1);
       }
     } else {

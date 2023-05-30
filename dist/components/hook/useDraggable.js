@@ -28,8 +28,8 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
     }
     const draggedRow = initialData[draggedIndex];
     const newData = [...initialData];
-    newData.splice(draggedIndex, 1);
-    newData.splice(index, 0, draggedRow);
+    newData?.splice(draggedIndex, 1);
+    newData?.splice(index, 0, draggedRow);
     setDataRow(newData);
   };
   const onDrop = () => {
