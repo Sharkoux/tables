@@ -30,7 +30,7 @@ const calculRange = (Data, rows) => {
   if (!Data) {
     return;
   }
-  const range = Array(Math.ceil((Data === null || Data === void 0 ? void 0 : Data?.length) / rows)).fill(0).map((item, index) => index + 1);
+  const range = Array(Math.ceil((Data === null || Data === void 0 ? void 0 : Data.length) / rows)).fill(0).map((item, index) => index + 1);
   return range;
 };
 
@@ -64,7 +64,7 @@ const TableNotLazy = _ref => {
   const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = (0, _useDraggable.default)(data, rows, page, infiniteScroll);
   const prevAllDataRef = (0, _react.useRef)(allData);
   (0, _react.useEffect)(() => {
-    if (filteredResults !== null && filteredResults !== void 0 && filteredResults?.length) {
+    if (filteredResults !== null && filteredResults !== void 0 && filteredResults.length) {
       setAllData(filteredResults);
       setRange(calculRange(filteredResults, rows));
     }
@@ -80,10 +80,10 @@ const TableNotLazy = _ref => {
   const Next = Data => {
     const start = (page - 1) * rows;
     const end = page * rows;
-    return Data === null || Data === void 0 ? void 0 : Data?.slice(start, end);
+    return Data === null || Data === void 0 ? void 0 : Data.slice(start, end);
   };
   const OnePage = Data => {
-    return Data === null || Data === void 0 ? void 0 : Data?.slice(0, rows);
+    return Data === null || Data === void 0 ? void 0 : Data.slice(0, rows);
   };
 
   // Update setData (pagination and infinite scroll)
@@ -92,22 +92,22 @@ const TableNotLazy = _ref => {
       setData(Next(allData));
     }
     setNewData(Next(allData));
-    if ((newDatas === null || newDatas === void 0 ? void 0 : newDatas?.length) > 0 && infiniteScroll) {
-      if (prevAllDataRef?.current !== allData) {
+    if ((newDatas === null || newDatas === void 0 ? void 0 : newDatas.length) > 0 && infiniteScroll) {
+      if (prevAllDataRef.current !== allData) {
         setData(OnePage(allData));
       } else {
         setData(prevData => {
           const newData = [...prevData];
-          if (prevData.length < allData?.length) {
+          if (prevData.length < allData.length) {
             newData.push(...newDatas);
           }
           return newData;
         });
       }
-      prevAllDataRef?.current = allData;
+      prevAllDataRef.current = allData;
     }
   }, [page, allData]);
-  let DATA = data === null || data === void 0 ? void 0 : data?.filter((x, i) => data?.indexOf(x) === i);
+  let DATA = data === null || data === void 0 ? void 0 : data.filter((x, i) => data.indexOf(x) === i);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("table", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
@@ -129,8 +129,8 @@ const TableNotLazy = _ref => {
       infiniteScroll: infiniteScroll
     });
   }))), /*#__PURE__*/_react.default.createElement("tbody", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass?.tbody
-  }, dataRow === DATA ? DATA === null || DATA === void 0 ? void 0 : DATA?.map((item, index) => {
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.tbody
+  }, dataRow === DATA ? DATA === null || DATA === void 0 ? void 0 : DATA.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
       key: index,
       data: item,
@@ -142,7 +142,7 @@ const TableNotLazy = _ref => {
       isDragging: isDragging,
       isTarget: false
     });
-  }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow?.map((item, index) => {
+  }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
       key: index,
       data: item,

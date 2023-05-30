@@ -58,13 +58,13 @@ const TableLazy = _ref => {
     });
   }, [search]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass?.input,
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
     onChange: handleSearch
   }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("table", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass?.table
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass?.thead
-  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns === null || Columns === void 0 ? void 0 : Columns?.map((_ref2, index) => {
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.thead
+  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns === null || Columns === void 0 ? void 0 : Columns.map((_ref2, index) => {
     let {
       header,
       accessor,
@@ -80,8 +80,8 @@ const TableLazy = _ref => {
       infiniteScroll: infiniteScroll
     });
   }))), /*#__PURE__*/_react.default.createElement("tbody", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass?.tbody
-  }, dataRow === Data ? Data === null || Data === void 0 ? void 0 : Data?.map((item, index) => {
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.tbody
+  }, dataRow === Data ? Data === null || Data === void 0 ? void 0 : Data.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
       key: index,
       data: item,
@@ -91,7 +91,7 @@ const TableLazy = _ref => {
       onDragOver: onDragOver,
       onDrop: onDrop
     });
-  }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow?.map((item, index) => {
+  }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
       key: index,
       data: item,
