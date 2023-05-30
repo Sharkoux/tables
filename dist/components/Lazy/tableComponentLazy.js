@@ -64,7 +64,7 @@ const TableLazy = _ref => {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead
-  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns.map((_ref2, index) => {
+  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns === null || Columns === void 0 ? void 0 : Columns.map((_ref2, index) => {
     let {
       header,
       accessor,

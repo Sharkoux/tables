@@ -27,7 +27,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
  */
 
 const calculRange = (Data, rows) => {
-  const range = Array(Math.ceil(Data.length / rows)).fill(0).map((item, index) => index + 1);
+  const range = Array(Math.ceil((Data === null || Data === void 0 ? void 0 : Data.length) / rows)).fill(0).map((item, index) => index + 1);
   return range;
 };
 
@@ -109,7 +109,7 @@ const TableNotLazy = _ref => {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead
-  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns.map((_ref2, index) => {
+  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns === null || Columns === void 0 ? void 0 : Columns.map((_ref2, index) => {
     let {
       header,
       accessor,

@@ -27,8 +27,8 @@ const TableFooter = _ref => {
     if (page < 1) {
       setPage(1);
     }
-    if (page >= range.length) {
-      setPage(range.length);
+    if (page >= (range === null || range === void 0 ? void 0 : range.length)) {
+      setPage(range === null || range === void 0 ? void 0 : range.length);
     }
   }, [page, setPage, data]);
   return /*#__PURE__*/_react.default.createElement("div", null, pagination ? /*#__PURE__*/_react.default.createElement("div", {
