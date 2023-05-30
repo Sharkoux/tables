@@ -27,6 +27,9 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
  */
 
 const calculRange = (Data, rows) => {
+  if (!Data) {
+    return;
+  }
   const range = Array(Math.ceil((Data === null || Data === void 0 ? void 0 : Data.length) / rows)).fill(0).map((item, index) => index + 1);
   return range;
 };
