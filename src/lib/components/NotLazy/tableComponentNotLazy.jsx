@@ -21,7 +21,9 @@ import useDraggableRows from "../hook/useDraggable";
  */
 
 const calculRange = (Data, rows) => {
-
+    if (!Data) {
+        return;
+    }
     const range = Array(Math.ceil(Data?.length / rows)).fill(0).map((item, index) => index + 1);
     return range;
 }
