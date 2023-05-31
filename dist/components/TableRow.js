@@ -26,13 +26,14 @@ const TableRow = _ref => {
     onDragStart: _onDragStart,
     onDragOver: _onDragOver,
     onDrop,
-    isTarget
+    draggables
   } = _ref;
+  const isDraggable = draggables === true;
   return /*#__PURE__*/_react.default.createElement("tr", {
     onDragStart: () => _onDragStart(index),
     onDragOver: () => _onDragOver(index),
     onDrop: onDrop,
-    draggable: true,
+    draggable: isDraggable,
     className: "rows rows-".concat(index)
   }, Columns.map(_ref2 => {
     let {

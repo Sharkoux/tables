@@ -12,9 +12,6 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
   const [dataRow, setDataRow] = (0, _react.useState)(initialData);
   const [isDragging, setIsDragging] = (0, _react.useState)(false);
   const [draggedIndex, setDraggedIndex] = (0, _react.useState)(null);
-  if (!draggable) {
-    return;
-  }
   (0, _react.useEffect)(() => {
     setDataRow(initialData);
   }, [initialData]);

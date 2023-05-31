@@ -26,7 +26,7 @@ const TableLazy = _ref => {
   let {
     lazy,
     first,
-    draggable,
+    draggables,
     input,
     onSearch,
     onSort,
@@ -44,7 +44,7 @@ const TableLazy = _ref => {
 
   //init hook for infiniteScroll and Drag/Drop
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, first, infiniteScroll, allUser, rows, onPage, page);
-  const [dataRow, onDragStart, onDragOver, onDrop] = (0, _useDraggable.default)(Data, draggable);
+  const [dataRow, onDragStart, onDragOver, onDrop] = (0, _useDraggable.default)(Data, draggables);
 
   //function search 
   const handleSearch = e => {
@@ -89,7 +89,8 @@ const TableLazy = _ref => {
       index: index,
       onDragStart: onDragStart,
       onDragOver: onDragOver,
-      onDrop: onDrop
+      onDrop: onDrop,
+      draggables: draggables
     });
   }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
@@ -99,7 +100,8 @@ const TableLazy = _ref => {
       index: index,
       onDragStart: onDragStart,
       onDragOver: onDragOver,
-      onDrop: onDrop
+      onDrop: onDrop,
+      draggables: draggables
     });
   }))), /*#__PURE__*/_react.default.createElement("div", {
     id: "scrollAnchor",

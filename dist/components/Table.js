@@ -24,7 +24,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Table = _ref => {
   let {
     first,
-    draggable,
+    draggables,
     input,
     onSearch,
     onSort,
@@ -43,7 +43,7 @@ const Table = _ref => {
   //Choice lazy or not lazy
   if (!lazy) {
     return /*#__PURE__*/_react.default.createElement(_tableComponentNotLazy.default, {
-      draggable: draggable,
+      draggables: draggables,
       lazy: lazy,
       Columns: Columns,
       Data: Data,
@@ -57,7 +57,7 @@ const Table = _ref => {
   return /*#__PURE__*/_react.default.createElement(_tableComponentLazy.default, {
     lazy: lazy,
     first: first,
-    draggable: draggable,
+    draggables: draggables,
     input: input,
     onSearch: onSearch,
     onSort: onSort,

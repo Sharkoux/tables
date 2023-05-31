@@ -42,7 +42,7 @@ const calculRange = (Data, rows) => {
 
 const TableNotLazy = _ref => {
   let {
-    draggable,
+    draggables,
     lazy,
     Columns,
     Data,
@@ -140,8 +140,7 @@ const TableNotLazy = _ref => {
       onDragStart: onDragStart,
       onDragOver: onDragOver,
       onDrop: onDrop,
-      isDragging: isDragging,
-      isTarget: false
+      draggables: draggables
     });
   }) : dataRow === null || dataRow === void 0 ? void 0 : dataRow.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
@@ -152,8 +151,7 @@ const TableNotLazy = _ref => {
       onDragStart: onDragStart,
       onDragOver: onDragOver,
       onDrop: onDrop,
-      isDragging: isDragging,
-      isTarget: false
+      draggables: draggables
     });
   }))), /*#__PURE__*/_react.default.createElement("div", {
     id: "scrollAnchor",
