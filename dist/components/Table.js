@@ -43,6 +43,7 @@ const Table = _ref => {
   //Choice lazy or not lazy
   if (!lazy) {
     return /*#__PURE__*/_react.default.createElement(_tableComponentNotLazy.default, {
+      draggable: draggable,
       lazy: lazy,
       Columns: Columns,
       Data: Data,

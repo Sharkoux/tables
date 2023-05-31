@@ -15,7 +15,7 @@ const Table = ({ first, draggable, input, onSearch, onSort, allUser, page, onPag
 
     //Choice lazy or not lazy
     if (!lazy) {
-        return <TableNotLazy lazy={lazy} Columns={Columns} Data={Data} customClass={customClass} rows={rows} search={search} pagination={pagination} infiniteScroll={infiniteScroll} />
+        return <TableNotLazy draggable={draggable} lazy={lazy} Columns={Columns} Data={Data} customClass={customClass} rows={rows} search={search} pagination={pagination} infiniteScroll={infiniteScroll} />
     }
     return <TableLazy lazy={lazy} first={first} draggable={draggable} input={input} onSearch={onSearch} onSort={onSort} allUser={allUser} page={page} onPage={onPage} Columns={Columns} Data={Data} customClass={customClass} rows={rows} pagination={pagination} infiniteScroll={infiniteScroll} />
 
