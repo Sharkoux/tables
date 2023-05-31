@@ -51,7 +51,7 @@ const TableNotLazy = ({ draggable, lazy, Columns, Data, customClass, rows, searc
     const [tableData, handleSorting] = useSort(filteredResults?.length ? filteredResults : Data);
 
 
-    const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = useDraggableRows(draggable, data, rows, page, infiniteScroll)
+    const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = useDraggableRows( data, draggable, rows, page, infiniteScroll)
 
 
 

@@ -19,9 +19,6 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
     setDataRow(initialData);
   }, [initialData]);
   const onDragStart = index => {
-    if (!draggable) {
-      return;
-    }
     setDraggedIndex(index);
     setIsDragging(true);
   };
@@ -39,9 +36,6 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
     setDataRow(newData);
   };
   const onDrop = () => {
-    if (!draggable) {
-      return;
-    }
     setDraggedIndex(null);
     setIsDragging(false);
   };
