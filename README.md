@@ -84,5 +84,19 @@ Package Table with customization for react projects
 
   ## Customization:     
   
-  - ***Styles***: import 
+  - ***Styles***: import {index} from 'sharkoux-packages-tables' 
+![image](https://github.com/Sharkoux/tables/assets/75306270/d615b827-968d-4c59-b3c8-5f4d5c9dcf70)
+
+ The customization of the style is quite simple, the classes are generated like this: 
+ 
+    -Columns:   class="Columns Columns-firstname Columns-Sortable"
+    The general class, the cell-specific class and the sort-specific class
+    
+    -Rows: class="rows rows-14"
+    The general class and the row-specific class
+    
+    -Cell: class="cell cell-firstname"
+    The general class and columns-specific class
+    
+ 
 
