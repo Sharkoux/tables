@@ -36,7 +36,7 @@ const calculRange = (Data, rows) => {
  * @return {component Table with header, rows and footer}  Dispatch function and state to children
  */
 
-const TableNotLazy = ({ draggable, lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll }) => {
+const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll }) => {
 
     const [range, setRange] = useState(calculRange(Data, rows))
     const [page, setPage] = useState(1);
@@ -51,7 +51,7 @@ const TableNotLazy = ({ draggable, lazy, Columns, Data, customClass, rows, searc
     const [tableData, handleSorting] = useSort(filteredResults?.length ? filteredResults : Data);
 
 
-    const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = useDraggableRows( data, draggable, rows, page, infiniteScroll)
+    const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = useDraggableRows(data, draggable, rows, page, infiniteScroll)
 
 
 
@@ -130,11 +130,11 @@ const TableNotLazy = ({ draggable, lazy, Columns, Data, customClass, rows, searc
                 <tbody className={customClass?.tbody} >
                     {dataRow === DATA ?
                         DATA?.map((item, index) => {
-                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} isDragging={isDragging} isTarget={false} />
+                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} draggables={draggables} />
                         })
                         :
                         dataRow?.map((item, index) => {
-                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} isDragging={isDragging} isTarget={false} />
+                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} draggables={draggables} />
                         })
 
                     }

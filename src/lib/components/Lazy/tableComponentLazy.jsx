@@ -16,12 +16,12 @@ import { useInfiniteScroll } from "../hook/useInfiniteScroll";
  */
 
 
-const TableLazy = ({ lazy, first, draggable, input, onSearch, onSort, allUser, onPage, Columns, Data, customClass, rows, pagination, infiniteScroll, page }) => {
+const TableLazy = ({ lazy, first, draggables, input, onSearch, onSort, allUser, onPage, Columns, Data, customClass, rows, pagination, infiniteScroll, page }) => {
     const [search, setSearch] = useState(null)
 
     //init hook for infiniteScroll and Drag/Drop
     useInfiniteScroll(lazy, first, infiniteScroll, allUser, rows, onPage, page)
-    const [dataRow, onDragStart, onDragOver, onDrop] = useDraggableRows(Data, draggable)
+    const [dataRow, onDragStart, onDragOver, onDrop] = useDraggableRows(Data, draggables)
 
     //function search 
     const handleSearch = (e) => {
@@ -47,11 +47,11 @@ const TableLazy = ({ lazy, first, draggable, input, onSearch, onSort, allUser, o
                 <tbody className={customClass?.tbody} >
                     {dataRow === Data ?
                         Data?.map((item, index) => {
-                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} />
+                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} draggables={draggables} />
                         })
                         :
                         dataRow?.map((item, index) => {
-                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} />
+                            return <TableRow key={index} data={item} Columns={Columns} index={index} onDragStart={onDragStart} onDragOver={onDragOver} onDrop={onDrop} draggables={draggables} />
                         })
                     }
                 </tbody>

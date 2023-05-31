@@ -9,9 +9,7 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
   const [isDragging, setIsDragging] = useState(false)
   const [draggedIndex, setDraggedIndex] = useState(null);
 
-  if (!draggable) {
-    return
-  }
+
 
   useEffect(() => {
     setDataRow(initialData)
