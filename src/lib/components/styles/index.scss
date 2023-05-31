@@ -16,10 +16,15 @@ code {
 table {
   margin: auto;
   width: 1200px;
+  border-radius: 10px;
+  background: #eff3f8;
+  padding: 30px;
 }
 
 td {
   width: 10%;
+  border: transparent!important;
+  border-bottom: 1px solid #eff3f8;
   text-align: center;
   height: 32px;
 }
@@ -27,24 +32,47 @@ td {
 thead {
   font-size: 18px;
   font-weight: bold;
+  .Columns {
+    font-weight: 500;
+    background-color: #f8f9fa;
+  }
+  .Columns-Sortable {
+    cursor: pointer;
+  }
 }
 
 tr {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #eff3f8;
   height: 32px;
+  background: white;
+  border-radius: 5px;
+}
+
+tbody {
+ 
+  .cell {
+    color: black;
+  }
+ 
 }
 
 .footer {
-  display: flex;
+  display: flex; 
   justify-content: center;
   gap: 15px;
   margin-top: 15px;
   height: 20px;
   align-items: center;
+  button {
+    padding: 5px;
+    border-radius: 10px;
+  }
 }
 
-#scrollAnchor {
-    display: flex;
-    justify-content: center;
-    
+input {
+  display: flex;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
 }
