@@ -24,4 +24,5 @@ Object.defineProperty(exports, "useInfiniteScroll", {
 var _Table = _interopRequireDefault(require("./components/Table"));
 var _useInfiniteScroll = require("./components/hook/useInfiniteScroll");
 var _useDraggable = _interopRequireDefault(require("./components/hook/useDraggable"));
+var _index = _interopRequireDefault(require("./components/styles/index.scss"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
