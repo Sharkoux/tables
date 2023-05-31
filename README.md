@@ -4,7 +4,7 @@ Package Table with customization for react projects
 
 # Features 
 
-- Two version Lazy load and not Lazy load
+- Two version: Lazy load and not Lazy load
 - Custom style
 - Add the ability to sort columns
 - Add the ability to search for a word
@@ -12,6 +12,10 @@ Package Table with customization for react projects
 - Add the ability to drag and drop rows
 
 # Install
+
+npm install sharkoux-packages-tables
+
+# Usage 
 
 
 
