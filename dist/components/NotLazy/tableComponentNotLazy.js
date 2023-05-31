@@ -62,7 +62,7 @@ const TableNotLazy = _ref => {
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, '', infiniteScroll, '', '', '', range, setPage, page);
   const filteredResults = (0, _useSearch.useSearch)(Data, search);
   const [tableData, handleSorting] = (0, _useSortNotLazy.useSort)(filteredResults !== null && filteredResults !== void 0 && filteredResults.length ? filteredResults : Data);
-  const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = (0, _useDraggable.default)(data, draggable, rows, page, infiniteScroll);
+  const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = (0, _useDraggable.default)(data, draggables, rows, page, infiniteScroll);
   const prevAllDataRef = (0, _react.useRef)(allData);
   (0, _react.useEffect)(() => {
     if (filteredResults !== null && filteredResults !== void 0 && filteredResults.length) {

@@ -8,7 +8,7 @@ require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
 /* Hook Draggable for drag/drop rows version Lazy */
 
-const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) => {
+const useDraggableRows = (initialData, draggables, rows, page, infiniteScroll) => {
   const [dataRow, setDataRow] = (0, _react.useState)(initialData);
   const [isDragging, setIsDragging] = (0, _react.useState)(false);
   const [draggedIndex, setDraggedIndex] = (0, _react.useState)(null);
@@ -20,7 +20,7 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
     setIsDragging(true);
   };
   const onDragOver = index => {
-    if (!draggable) {
+    if (!draggables) {
       return;
     }
     if (draggedIndex === null || draggedIndex === index) {

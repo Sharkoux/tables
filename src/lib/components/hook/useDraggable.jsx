@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 /* Hook Draggable for drag/drop rows version Lazy */
 
 
-const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) => {
+const useDraggableRows = (initialData, draggables, rows, page, infiniteScroll) => {
   const [dataRow, setDataRow] = useState(initialData);
   const [isDragging, setIsDragging] = useState(false)
   const [draggedIndex, setDraggedIndex] = useState(null);
@@ -22,7 +22,7 @@ const useDraggableRows = (initialData, draggable, rows, page, infiniteScroll) =>
   };
 
   const onDragOver = (index) => {
-    if (!draggable) {
+    if (!draggables) {
       return
     }
     if (draggedIndex === null || draggedIndex === index) {
