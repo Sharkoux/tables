@@ -5,7 +5,7 @@ Package Table with customization for react projects
 # Features 
 
 - Two version: Lazy load and not Lazy load
-- Custom style
+- Custom style (sass based)
 - Add the ability to sort columns
 - Add the ability to search for a word
 - Add pagination or scroll infinite
@@ -14,6 +14,8 @@ Package Table with customization for react projects
 # Install
 
     npm install sharkoux-packages-tables
+    
+    import { Table } from 'sharkoux-packages-tables'
 
 # Usage 
 
@@ -44,6 +46,7 @@ Package Table with customization for react projects
             "departement": "Human Resources"
         }
         ]
+ 
  - ***Columns***: An array containing an object for each column of the array
  
         const Columns = React.useMemo(
@@ -60,10 +63,26 @@ Package Table with customization for react projects
                 { header: "Zip Code", accessor: "zipCode", sortable: true }
             ]
           )
+    
+     - *Header* corresponds to the display title of the column of the table
+     - *Accessor* corresponds to the key  of the data to associate with the columns
+     - *sortable* if true, it becomes possible to sort the data of this columns
+
+- ***Rows***: Number of lines to display per page 
+
+- ***infiniteScroll or pagination*** : either infinitescroll is enabled (infiniteScroll={true}) or pagination is enabled (pagination={true})
+
+  ## Result: 
+    A table sorting data by columns, with the functionality of infinite scroll or pagination, and modifying the order displayed by clicking on the header of a column
+
+    ![image](https://github.com/Sharkoux/tables/assets/75306270/17e6b94c-346c-424d-8135-e49d29d7261a)
+
+    ![image](https://github.com/Sharkoux/tables/assets/75306270/5a96b905-2659-4efa-8f2b-d5cb707bb971)
+    
+    ![image](https://github.com/Sharkoux/tables/assets/75306270/e0f4b35a-2664-42d1-b124-06d07393b9c7)
+
+
+  ## Customization:     
   
-
-
-
-
-
+  - ***Styles***: import 
 
