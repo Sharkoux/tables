@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.useInfiniteScroll = void 0;
-require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
-const useInfiniteScroll = (lazy, firsts, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
-  const [first, setFirst] = (0, _react.useState)(firsts);
-  const [pages, setPages] = (0, _react.useState)(page);
+const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
   const handleScroll = entries => {
     const entry = entries[0];
     if (!lazy) {
@@ -16,10 +13,10 @@ const useInfiniteScroll = (lazy, firsts, infiniteScroll, allUser, rows, onPage, 
         setPage(page + 1);
       }
     } else {
-      if (entry.isIntersecting && firsts < allUser) {
+      if (entry.isIntersecting && first < allUser) {
         onPage({
           page: page + 1,
-          first: firsts + rows
+          first: first + rows
         });
       }
     }
