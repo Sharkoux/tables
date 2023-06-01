@@ -53,6 +53,7 @@ const TableNotLazy = _ref => {
     infiniteScroll,
     input
   } = _ref;
+  const [searchs, setSearchs] = (0, _react.useState)(search);
   const [range, setRange] = (0, _react.useState)(calculRange(Data, rows));
   const [page, setPage] = (0, _react.useState)(1);
   const [allData, setAllData] = (0, _react.useState)();
@@ -61,7 +62,7 @@ const TableNotLazy = _ref => {
 
   //Init Hook for infinite Scroll, search, sort, drag and drop
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, '', infiniteScroll, '', '', '', range, setPage, page);
-  const filteredResults = (0, _useSearch.useSearch)(Data, search);
+  const filteredResults = (0, _useSearch.useSearch)(Data, searchs);
   const [tableData, handleSorting] = (0, _useSortNotLazy.useSort)(filteredResults !== null && filteredResults !== void 0 && filteredResults.length ? filteredResults : Data);
   const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = (0, _useDraggable.default)(data, draggables, rows, page, infiniteScroll);
   const prevAllDataRef = (0, _react.useRef)(allData);
@@ -110,6 +111,11 @@ const TableNotLazy = _ref => {
     }
   }, [page, allData]);
   let DATA = data === null || data === void 0 ? void 0 : data.filter((x, i) => data.indexOf(x) === i);
+
+  //function search 
+  const handleSearch = e => {
+    setSearchs(e.target.value);
+  };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
     onChange: handleSearch

@@ -37,7 +37,7 @@ const calculRange = (Data, rows) => {
  */
 
 const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll, input }) => {
-
+    const [searchs, setSearchs] = useState(search)
     const [range, setRange] = useState(calculRange(Data, rows))
     const [page, setPage] = useState(1);
     const [allData, setAllData] = useState()
@@ -47,7 +47,7 @@ const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, sear
     //Init Hook for infinite Scroll, search, sort, drag and drop
     useInfiniteScroll(lazy, '', infiniteScroll, '', '', '', range, setPage, page)
 
-    const filteredResults = useSearch(Data, search);
+    const filteredResults = useSearch(Data, searchs);
     const [tableData, handleSorting] = useSort(filteredResults?.length ? filteredResults : Data);
 
 
@@ -115,6 +115,10 @@ const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, sear
     let DATA = data?.filter((x, i) => data.indexOf(x) === i)
 
 
+    //function search 
+    const handleSearch = (e) => {
+        setSearchs(e.target.value)
+    }
 
 
     return (
