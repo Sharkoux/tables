@@ -50,7 +50,8 @@ const TableNotLazy = _ref => {
     rows,
     search,
     pagination,
-    infiniteScroll
+    infiniteScroll,
+    input
   } = _ref;
   const [range, setRange] = (0, _react.useState)(calculRange(Data, rows));
   const [page, setPage] = (0, _react.useState)(1);
@@ -112,7 +113,7 @@ const TableNotLazy = _ref => {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
     onChange: handleSearch
-  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("table", {
+  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), "*", /*#__PURE__*/_react.default.createElement("table", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead

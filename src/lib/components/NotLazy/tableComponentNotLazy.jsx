@@ -36,7 +36,7 @@ const calculRange = (Data, rows) => {
  * @return {component Table with header, rows and footer}  Dispatch function and state to children
  */
 
-const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll }) => {
+const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll, input }) => {
 
     const [range, setRange] = useState(calculRange(Data, rows))
     const [page, setPage] = useState(1);
