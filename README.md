@@ -81,11 +81,12 @@ Package Table with customization for react projects
     
     ![image](https://github.com/Sharkoux/tables/assets/75306270/e0f4b35a-2664-42d1-b124-06d07393b9c7)
 
-
+  
   ## Customization:     
   
   - ***Styles***: import {index} from 'sharkoux-packages-tables' 
-![image](https://github.com/Sharkoux/tables/assets/75306270/d615b827-968d-4c59-b3c8-5f4d5c9dcf70)
+  ![image](https://github.com/Sharkoux/tables/assets/75306270/d615b827-968d-4c59-b3c8-5f4d5c9dcf70)
+  ![image](https://github.com/Sharkoux/tables/assets/75306270/89b6d610-a827-435d-9117-6dd7f35eebb3)
 
  The customization of the style is quite simple, the classes are generated like this: 
  
@@ -98,5 +99,27 @@ Package Table with customization for react projects
     -Cell: class="cell cell-firstname"
     The general class and columns-specific class
     
+ - ***search***: 
+        Two choices: 
+           - Activate input which will display an input allowing you to search within the table
+                   
+                        <Table Columns={Columns} Data={Data} rows={15} pagination={true} input={true}></Table>
+                        
+  ![image](https://github.com/Sharkoux/tables/assets/75306270/231d1474-b328-4014-b4db-da582be8fd3e)
+           
+          - Use the search props to send a search already performed in your project to the table
+           
+                       <Table Columns={Columns} Data={Data} rows={15} pagination={true} search={'sales'} ></Table>
  
+- ***Drag and Drop***: By adding the draggables props, it becomes possible to reorganize the lines thanks to the drag and drop
+    
+                        <Table Columns={Columns} Data={Data} rows={15} pagination={true} draggables={true}></Table>
+                        
+   ![image](https://github.com/Sharkoux/tables/assets/75306270/2da63849-fee7-42cd-ac86-92d1890c252e)
+   ![image](https://github.com/Sharkoux/tables/assets/75306270/680f418d-8592-4e72-a053-938eb00dfdc6)
+   
+   
+   
+
+
 
