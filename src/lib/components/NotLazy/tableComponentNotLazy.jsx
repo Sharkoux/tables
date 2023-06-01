@@ -119,6 +119,7 @@ const TableNotLazy = ({ draggables, lazy, Columns, Data, customClass, rows, sear
 
     return (
         <>
+            {input ? <input className={customClass?.input} onChange={handleSearch}></input> : <></>}
             <table className={customClass?.table}>
                 <thead className={customClass?.thead}>
                     <tr>

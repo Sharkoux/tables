@@ -44,6 +44,7 @@ const Table = _ref => {
   if (!lazy) {
     return /*#__PURE__*/_react.default.createElement(_tableComponentNotLazy.default, {
       draggables: draggables,
+      input: input,
       lazy: lazy,
       Columns: Columns,
       Data: Data,

@@ -109,7 +109,10 @@ const TableNotLazy = _ref => {
     }
   }, [page, allData]);
   let DATA = data === null || data === void 0 ? void 0 : data.filter((x, i) => data.indexOf(x) === i);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("table", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
+    className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
+    onChange: handleSearch
+  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("table", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead
