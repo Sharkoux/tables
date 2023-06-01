@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 
 
 export const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
+    const [firsts, setFirst] = useState(first)
+    const [pages, setPages] = useState(page)
 
 
 
@@ -15,7 +17,7 @@ export const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, on
         }
         else {
             if (entry.isIntersecting && first < allUser) {
-                onPage({ page: page + 1, first: first + rows })
+                onPage({ page: pages + 1, first: firsts + rows })
             }
         }
 
