@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.useInfiniteScroll = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-require("core-js/modules/es.parse-int.js");
 var _react = require("react");
 const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
   const [firsts, setFirst] = (0, _react.useState)(first);
@@ -19,7 +18,7 @@ const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, r
     } else {
       if (entry.isIntersecting && first < allUser) {
         onPage({
-          page: parseInt(pages) + 1,
+          page: pages++,
           first: firsts + rows
         });
       }
