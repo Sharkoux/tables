@@ -1,25 +1,23 @@
 
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
-export const useInfiniteScroll = (lazy, firsts, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
-    const [first, setFirst] = useState(firsts)
-    const [pages, setPages] = useState(page)
+export const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
 
 
 
     const handleScroll = (entries) => {
         const entry = entries[0];
-        if(!lazy) {
+        if (!lazy) {
             if (entry.isIntersecting && page <= range?.length) {
                 setPage(page + 1)
             }
         }
         else {
-        if (entry.isIntersecting && firsts < allUser) {
-            onPage({ page: page + 1, first: firsts + rows })
+            if (entry.isIntersecting && first < allUser) {
+                onPage({ page: page + 1, first: first + rows })
+            }
         }
-    }
 
     };
 
