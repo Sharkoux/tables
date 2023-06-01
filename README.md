@@ -99,7 +99,7 @@ Package Table with customization for react projects
     -Cell: class="cell cell-firstname"
     The general class and columns-specific class
     
- - ***search***: 
+ - ***Search***: 
         Two choices: 
            - Activate input which will display an input allowing you to search within the table
                    
@@ -118,6 +118,14 @@ Package Table with customization for react projects
    ![image](https://github.com/Sharkoux/tables/assets/75306270/2da63849-fee7-42cd-ac86-92d1890c252e)
    ![image](https://github.com/Sharkoux/tables/assets/75306270/680f418d-8592-4e72-a053-938eb00dfdc6)
    
+   ## Lazy Load version
+   
+   The main idea of lazy loading is to delay loading a resource until it is actually needed. Rather than loading all resources upfront, lazy loading allows them to load gradually as the user scrolls down the page or        performs a specific action.
+   
+   ## Minimum configuration for this version
+    
+   
+     
    
    
 
