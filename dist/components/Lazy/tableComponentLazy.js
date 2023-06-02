@@ -43,7 +43,7 @@ const TableLazy = _ref => {
   const [search, setSearch] = (0, _react.useState)(null);
 
   //init hook for infiniteScroll and Drag/Drop
-  (0, _useInfiniteScroll.useInfiniteScroll)(lazy, first, infiniteScroll, allUser, rows, onPage, page);
+  (0, _useInfiniteScroll.useInfiniteScroll)(lazy, first, infiniteScroll, allUser, rows, onPage, '', '', page);
   const [dataRow, onDragStart, onDragOver, onDrop] = (0, _useDraggable.default)(Data, draggables);
 
   //function search 

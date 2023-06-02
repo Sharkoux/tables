@@ -20,7 +20,7 @@ const TableLazy = ({ lazy, first, draggables, input, onSearch, onSort, allUser, 
     const [search, setSearch] = useState(null)
 
     //init hook for infiniteScroll and Drag/Drop
-    useInfiniteScroll(lazy, first, infiniteScroll, allUser, rows, onPage, page)
+    useInfiniteScroll(lazy, first, infiniteScroll, allUser, rows, onPage, '', '', page)
     const [dataRow, onDragStart, onDragOver, onDrop] = useDraggableRows(Data, draggables)
 
     //function search 
