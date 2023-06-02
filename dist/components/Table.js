@@ -63,14 +63,14 @@ const Table = _ref => {
     onSearch: onSearch,
     onSort: onSort,
     allUser: allUser,
-    page: page,
     onPage: onPage,
     Columns: Columns,
     Data: Data,
     customClass: customClass,
     rows: rows,
     pagination: pagination,
-    infiniteScroll: infiniteScroll
+    infiniteScroll: infiniteScroll,
+    page: page
   });
 };
 var _default = Table;
