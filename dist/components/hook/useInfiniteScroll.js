@@ -19,7 +19,7 @@ const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, r
       if (entry.isIntersecting && first < allUser) {
         onPage({
           page: page + 1,
-          first: firsts + rows
+          first: first + rows
         });
       }
     }
