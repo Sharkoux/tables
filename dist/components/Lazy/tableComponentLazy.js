@@ -28,7 +28,6 @@ const TableLazy = _ref => {
     first,
     draggables,
     input,
-    onSearch,
     onSort,
     allUser,
     onPage,
@@ -45,22 +44,7 @@ const TableLazy = _ref => {
   //init hook for infiniteScroll and Drag/Drop
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, first, infiniteScroll, allUser, rows, onPage, '', '', page);
   const [dataRow, onDragStart, onDragOver, onDrop] = (0, _useDraggable.default)(Data, draggables);
-
-  //function search 
-  const handleSearch = e => {
-    setSearch(e.target.value);
-  };
-
-  //event for onSearch function, modification state
-  (0, _react.useEffect)(() => {
-    onSearch({
-      search: search
-    });
-  }, [search]);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
-    className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
-    onChange: handleSearch
-  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), /*#__PURE__*/_react.default.createElement("table", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("table", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
   }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead

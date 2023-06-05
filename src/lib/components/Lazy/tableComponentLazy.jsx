@@ -16,26 +16,17 @@ import { useInfiniteScroll } from "../hook/useInfiniteScroll";
  */
 
 
-const TableLazy = ({ lazy, first, draggables, input, onSearch, onSort, allUser, onPage, Columns, Data, customClass, rows, pagination, infiniteScroll, page }) => {
+const TableLazy = ({ lazy, first, draggables, input, onSort, allUser, onPage, Columns, Data, customClass, rows, pagination, infiniteScroll, page }) => {
     const [search, setSearch] = useState(null)
 
     //init hook for infiniteScroll and Drag/Drop
     useInfiniteScroll(lazy, first, infiniteScroll, allUser, rows, onPage, '', '', page)
     const [dataRow, onDragStart, onDragOver, onDrop] = useDraggableRows(Data, draggables)
 
-    //function search 
-    const handleSearch = (e) => {
-        setSearch(e.target.value)
-    }
-
-    //event for onSearch function, modification state
-    useEffect(() => {
-        onSearch({ search: search })
-    }, [search])
 
     return (
         <>
-            {input ? <input className={customClass?.input} onChange={handleSearch}></input> : <></>}
+
             <table className={customClass?.table}>
                 <thead className={customClass?.thead}>
                     <tr>
