@@ -12,7 +12,7 @@ Object.defineProperty(exports, "Table", {
 Object.defineProperty(exports, "styles", {
   enumerable: true,
   get: function get() {
-    return _index.default;
+    return _index.styles;
   }
 });
 Object.defineProperty(exports, "useDraggableRows", {
@@ -27,22 +27,8 @@ Object.defineProperty(exports, "useInfiniteScroll", {
     return _useInfiniteScroll.useInfiniteScroll;
   }
 });
-Object.defineProperty(exports, "useSearch", {
-  enumerable: true,
-  get: function get() {
-    return _useSearch.useSearch;
-  }
-});
-Object.defineProperty(exports, "useSort", {
-  enumerable: true,
-  get: function get() {
-    return _useSort.useSort;
-  }
-});
 var _Table = _interopRequireDefault(require("./components/Table"));
 var _useInfiniteScroll = require("./components/hook/useInfiniteScroll");
 var _useDraggable = require("./components/hook/useDraggable");
-var _index = _interopRequireDefault(require("./components/styles/index.scss"));
-var _useSort = require("./components/hook/useSort");
-var _useSearch = require("./components/hook/useSearch");
+var _index = require("./components/styles/index.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
