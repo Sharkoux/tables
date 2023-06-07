@@ -9,13 +9,6 @@ require("core-js/modules/web.dom-collections.iterator.js");
 var _react = _interopRequireWildcard(require("react"));
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-/**
- * < Component Footer, if pagination (lazy load) >
- * @param   {state} { first, allUser, pagination, rows, page} State for update page
- * @param   {function} onPage Function for update state Page
- * @return  {Component footer}  Two button for next and previous page
- */
-
 const TableFooter = _ref => {
   let {
     first,
@@ -33,8 +26,6 @@ const TableFooter = _ref => {
       page: pages
     });
   }, [pages]);
-
-  //next data
   const handleNext = () => {
     if (page >= Math.ceil(allUser / rows)) {
       console.log('not');
@@ -43,8 +34,6 @@ const TableFooter = _ref => {
     setFirst(first + rows);
     setPages(page + 1);
   };
-
-  //previous data
   const handlePrevious = () => {
     if (pages <= 1) {
       return;
@@ -52,13 +41,13 @@ const TableFooter = _ref => {
     setFirst(first - rows);
     setPages(page - 1);
   };
-  return /*#__PURE__*/_react.default.createElement("div", null, pagination ? /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", null, " ", pagination ? /*#__PURE__*/_react.default.createElement("div", {
     className: "footer"
-  }, /*#__PURE__*/_react.default.createElement("button", {
+  }, " ", /*#__PURE__*/_react.default.createElement("button", {
     onClick: handlePrevious
-  }, "Previous"), /*#__PURE__*/_react.default.createElement("p", null, page), /*#__PURE__*/_react.default.createElement("button", {
+  }, "Previous"), " ", /*#__PURE__*/_react.default.createElement("p", null, page), " ", /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleNext
-  }, "Next")) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null));
+  }, "Next"), " ") : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), " ");
 };
 var _default = TableFooter;
 exports.default = _default;
