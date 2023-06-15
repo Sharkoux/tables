@@ -14,6 +14,13 @@ var _tableComponentLazy = _interopRequireDefault(require("./Lazy/tableComponentL
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+/**
+ * <Component Table >
+ * @param   {state} { first, draggable, input ...}  Personalization parameter
+ * @param   {function} { onSearch, onSort, ...}  State Update
+ * @return  {Component}       Component Table lazy or not lazy
+ */
+
 const Table = _ref => {
   let {
     first,
@@ -33,6 +40,7 @@ const Table = _ref => {
     infiniteScroll,
     lazy
   } = _ref;
+  //Choice lazy or not lazy
   if (!lazy) {
     return /*#__PURE__*/_react.default.createElement(_tableComponentNotLazy.default, {
       draggables: draggables,

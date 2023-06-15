@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
+/* Hook Draggable for drag/drop rows version Lazy */
+
 const useDraggableRows = (initialData, draggables, rows, page, infiniteScroll) => {
   const [dataRow, setDataRow] = (0, _react.useState)(initialData);
   const [isDragging, setIsDragging] = (0, _react.useState)(false);

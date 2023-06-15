@@ -19,6 +19,13 @@ var _useDraggable = _interopRequireDefault(require("../hook/useDraggable"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+/**
+ * <Function for calcul range>
+ * @param  {array} Data All data 
+ * @param  {string} rows State rows
+ * @return {range}  
+ */
+
 const calculRange = (Data, rows) => {
   if (!Data) {
     return;
@@ -26,6 +33,13 @@ const calculRange = (Data, rows) => {
   const range = Array(Math.ceil((Data === null || Data === void 0 ? void 0 : Data.length) / rows)).fill(0).map((item, index) => index + 1);
   return range;
 };
+
+/**
+ * <Component Table without lazy load>
+ * @param  {state} {lazy, Columns, Data, customClass, rows, search, pagination, infiniteScroll } state
+ * @return {component Table with header, rows and footer}  Dispatch function and state to children
+ */
+
 const TableNotLazy = _ref => {
   let {
     draggables,
@@ -45,6 +59,8 @@ const TableNotLazy = _ref => {
   const [allData, setAllData] = (0, _react.useState)();
   const [data, setData] = (0, _react.useState)([]);
   const [newDatas, setNewData] = (0, _react.useState)();
+
+  //Init Hook for infinite Scroll, search, sort, drag and drop
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, '', infiniteScroll, '', '', '', range, setPage, page);
   const filteredResults = (0, _useSearch.useSearch)(Data, searchs);
   const [tableData, handleSorting] = (0, _useSortNotLazy.useSort)(filteredResults !== null && filteredResults !== void 0 && filteredResults.length ? filteredResults : Data);
@@ -62,6 +78,8 @@ const TableNotLazy = _ref => {
   if (!rows) {
     rows = 30;
   }
+
+  // function next Data slice
   const Next = Data => {
     const start = (page - 1) * rows;
     const end = page * rows;
@@ -70,6 +88,8 @@ const TableNotLazy = _ref => {
   const OnePage = Data => {
     return Data === null || Data === void 0 ? void 0 : Data.slice(0, rows);
   };
+
+  // Update setData (pagination and infinite scroll)
   (0, _react.useEffect)(() => {
     if (pagination && !infiniteScroll) {
       setData(Next(allData));
@@ -91,17 +111,19 @@ const TableNotLazy = _ref => {
     }
   }, [page, allData]);
   let DATA = data === null || data === void 0 ? void 0 : data.filter((x, i) => data.indexOf(x) === i);
+
+  //function search 
   const handleSearch = e => {
     setSearchs(e.target.value);
   };
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", input ? /*#__PURE__*/_react.default.createElement("input", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input ? /*#__PURE__*/_react.default.createElement("input", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.input,
     onChange: handleSearch
-  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), "* ", /*#__PURE__*/_react.default.createElement("table", {
+  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null), "*", /*#__PURE__*/_react.default.createElement("table", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.table
-  }, " ", /*#__PURE__*/_react.default.createElement("thead", {
+  }, /*#__PURE__*/_react.default.createElement("thead", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.thead
-  }, " ", /*#__PURE__*/_react.default.createElement("tr", null, " ", Columns === null || Columns === void 0 ? void 0 : Columns.map((_ref2, index) => {
+  }, /*#__PURE__*/_react.default.createElement("tr", null, Columns === null || Columns === void 0 ? void 0 : Columns.map((_ref2, index) => {
     let {
       header,
       accessor,
@@ -117,9 +139,9 @@ const TableNotLazy = _ref => {
       setPage: setPage,
       infiniteScroll: infiniteScroll
     });
-  }), " "), " "), " ", /*#__PURE__*/_react.default.createElement("tbody", {
+  }))), /*#__PURE__*/_react.default.createElement("tbody", {
     className: customClass === null || customClass === void 0 ? void 0 : customClass.tbody
-  }, " ", dataRow === DATA ? DATA === null || DATA === void 0 ? void 0 : DATA.map((item, index) => {
+  }, dataRow === DATA ? DATA === null || DATA === void 0 ? void 0 : DATA.map((item, index) => {
     return /*#__PURE__*/_react.default.createElement(_TableRow.default, {
       key: index,
       data: item,
@@ -141,20 +163,20 @@ const TableNotLazy = _ref => {
       onDrop: onDrop,
       draggables: draggables
     });
-  }), " "), " "), " ", /*#__PURE__*/_react.default.createElement("div", {
+  }))), /*#__PURE__*/_react.default.createElement("div", {
     id: "scrollAnchor",
     style: infiniteScroll ? {
       display: 'flex'
     } : {
       display: 'none'
     }
-  }, "...loading"), " ", /*#__PURE__*/_react.default.createElement(_TableFooter.default, {
+  }, "...loading"), /*#__PURE__*/_react.default.createElement(_TableFooter.default, {
     range: range,
     setPage: setPage,
     page: page,
     pagination: pagination,
     data: data
-  }), " ");
+  }));
 };
 var _default = TableNotLazy;
 exports.default = _default;
