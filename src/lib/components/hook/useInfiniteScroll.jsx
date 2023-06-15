@@ -3,8 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 
 
 export const useInfiniteScroll = (lazy, first, infiniteScroll, allUser, rows, onPage, range, setPage, page) => {
-    const [firsts, setFirst] = useState(first)
-    const [pages, setPages] = useState(page)
 
 
 

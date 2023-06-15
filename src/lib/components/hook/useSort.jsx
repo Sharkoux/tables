@@ -1,23 +1,25 @@
 import { useState } from "react";
 
 
-export const useSort = (data, sortField, sortOrder) => {
-  const sortedData = [...data];
+export const useSort = (data) => {
+    const [tableData, setTableData] = useState(data);
 
-  if (sortField) {
+    const handleSorting = (sortField, sortOrder) => {
+        if (sortField) {
+            const sort = [...data].sort((a, b) => {
+                if (!a[sortField]) return 1;
+                if (!b[sortField]) return -1;
+                if (!a[sortField] && !b[sortField]) return 0;
+                return (
+                    a[sortField].toString().localeCompare(b[sortField].toString(), {
+                        numeric: true,
+                    }) * (sortOrder === "asc" ? 1 : -1)
+                )
+            })
+            setTableData(sort)
+        }
+    };
 
-    sortedData.sort((a, b) => {
-      const valueA = a[sortField];
-      const valueB = b[sortField];
 
-      if (valueA < valueB) {
-        return sortOrder === "asc" ? -1 : 1;
-      }
-      if (valueA > valueB) {
-        return sortOrder === "asc" ? 1 : -1;
-      }
-      return 0;
-    });
-  }
-  return sortedData;
+    return [tableData, handleSorting];
 };

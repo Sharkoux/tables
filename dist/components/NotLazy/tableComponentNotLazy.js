@@ -12,7 +12,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _TableHead = _interopRequireDefault(require("./TableHead"));
 var _TableRow = _interopRequireDefault(require("../TableRow"));
 var _TableFooter = _interopRequireDefault(require("./TableFooter"));
-var _useSortNotLazy = require("../hook/useSortNotLazy");
+var _useSort = require("../hook/useSort");
 var _useSearch = require("../hook/useSearch");
 var _useInfiniteScroll = require("../hook/useInfiniteScroll");
 var _useDraggable = _interopRequireDefault(require("../hook/useDraggable"));
@@ -63,7 +63,7 @@ const TableNotLazy = _ref => {
   //Init Hook for infinite Scroll, search, sort, drag and drop
   (0, _useInfiniteScroll.useInfiniteScroll)(lazy, '', infiniteScroll, '', '', '', range, setPage, page);
   const filteredResults = (0, _useSearch.useSearch)(Data, searchs);
-  const [tableData, handleSorting] = (0, _useSortNotLazy.useSort)(filteredResults !== null && filteredResults !== void 0 && filteredResults.length ? filteredResults : Data);
+  const [tableData, handleSorting] = (0, _useSort.useSort)(filteredResults !== null && filteredResults !== void 0 && filteredResults.length ? filteredResults : Data);
   const [dataRow, onDragStart, onDragOver, onDrop, isDragging] = (0, _useDraggable.default)(data, draggables, rows, page, infiniteScroll);
   const prevAllDataRef = (0, _react.useRef)(allData);
   (0, _react.useEffect)(() => {

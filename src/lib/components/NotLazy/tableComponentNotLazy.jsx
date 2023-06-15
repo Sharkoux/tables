@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import TableHeadItem from "./TableHead";
 import TableRow from "../TableRow";
 import TableFooter from "./TableFooter";
-import { useSort } from "../hook/useSortNotLazy";
+import { useSort } from "../hook/useSort";
 import { useSearch } from "../hook/useSearch";
 import { useInfiniteScroll } from "../hook/useInfiniteScroll";
 import useDraggableRows from "../hook/useDraggable";
