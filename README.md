@@ -263,13 +263,6 @@ Package Table with customization for react projects
    
 A table sorting data by columns, with the functionality of infinite scroll or pagination, and modifying the order displayed by clicking on the header of a column
 
-  ![image](https://github.com/Sharkoux/tables/assets/75306270/17e6b94c-346c-424d-8135-e49d29d7261a)
-
-  ![image](https://github.com/Sharkoux/tables/assets/75306270/5a96b905-2659-4efa-8f2b-d5cb707bb971)
-    
-  ![image](https://github.com/Sharkoux/tables/assets/75306270/e0f4b35a-2664-42d1-b124-06d07393b9c7)
-  
-  - ***Styles***: import {index} from 'sharkoux-packages-tables' 
   ![image](https://github.com/Sharkoux/tables/assets/75306270/d615b827-968d-4c59-b3c8-5f4d5c9dcf70)
   ![image](https://github.com/Sharkoux/tables/assets/75306270/89b6d610-a827-435d-9117-6dd7f35eebb3)
   ![image](https://github.com/Sharkoux/tables/assets/75306270/2da63849-fee7-42cd-ac86-92d1890c252e)
