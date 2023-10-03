@@ -15,7 +15,7 @@ const TableCell = ({ data, accessor, cell }) => {
 
   if (cell) {
     return (
-      <td className={`cell cell-${accessor}`} key={accessor}>{cell(tData)}</td>
+      <td className={`cell cell-${accessor}`} key={accessor}>{cell({ value: tData })}</td>
     )
   }
 
