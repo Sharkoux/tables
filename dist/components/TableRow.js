@@ -37,13 +37,15 @@ const TableRow = _ref => {
     className: "rows rows-".concat(index)
   }, Columns.map(_ref2 => {
     let {
-      accessor
+      accessor,
+      cell
     } = _ref2;
     return /*#__PURE__*/_react.default.createElement(_TableCell.default, {
       data: data,
       accessor: accessor,
       key: accessor,
-      index: index
+      index: index,
+      cell: cell
     });
   }));
 };

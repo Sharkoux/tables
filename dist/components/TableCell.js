@@ -18,9 +18,16 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const TableCell = _ref => {
   let {
     data,
-    accessor
+    accessor,
+    cell
   } = _ref;
   const tData = data[accessor] ? data[accessor] : null;
+  if (cell) {
+    return /*#__PURE__*/_react.default.createElement("td", {
+      className: "cell cell-".concat(accessor),
+      key: accessor
+    }, cell(tData));
+  }
   return /*#__PURE__*/_react.default.createElement("td", {
     className: "cell cell-".concat(accessor),
     key: accessor
