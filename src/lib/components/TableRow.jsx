@@ -19,8 +19,8 @@ const TableRow = ({ data, Columns, index, onDragStart, onDragOver, onDrop, dragg
       draggable={isDraggable}
       className={`rows rows-${index}`}
     >
-      {Columns.map(({ accessor }) => {
-        return <TableCell data={data} accessor={accessor} key={accessor} index={index} />
+      {Columns.map(({ accessor, cell }) => {
+        return <TableCell data={data} accessor={accessor} key={accessor} index={index} cell={cell} />
       })}
     </tr>
   );

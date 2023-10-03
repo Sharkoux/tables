@@ -23,7 +23,7 @@ const TableFooter = ({ range, setPage, page, pagination, data }) => {
     }, [page, setPage, data]);
 
 
-
+    
     return (
         <div >
             {pagination ?

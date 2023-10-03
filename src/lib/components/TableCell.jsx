@@ -8,10 +8,16 @@ import React, { useState, useRef, useEffect } from "react";
  * @return  {Component Cell}  
  */
 
-const TableCell = ({ data, accessor }) => {
+const TableCell = ({ data, accessor, cell }) => {
 
 
   const tData = data[accessor] ? data[accessor] : null;
+
+  if (cell) {
+    return (
+      <td className={`cell cell-${accessor}`} key={accessor}>{cell(tData)}</td>
+    )
+  }
 
   return (
     <td className={`cell cell-${accessor}`} key={accessor}>{tData}</td>
