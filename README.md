@@ -60,13 +60,17 @@ Package Table with customization for react projects
                 { header: "Street", accessor: "street", sortable: true },
                 { header: "City", accessor: "city", sortable: true },
                 { header: "State", accessor: "state", sortable: true },
-                { header: "Zip Code", accessor: "zipCode", sortable: true }
+                { header: "Zip Code", accessor: "zipCode", sortable: true, 
+                cell: ({ value }) => <Link className="links link " to={}>{value}</Link> }
             ]
           )
+
+          
     
      - *Header* corresponds to the display title of the column of the table
      - *Accessor* corresponds to the key  of the data to associate with the columns
      - *sortable* if true, it becomes possible to sort the data of this columns
+     - *cell* corresponds to the cell component to be displayed in the column (optional)
 
 - ***Rows***: Number of lines to display per page 
 
@@ -111,7 +115,8 @@ Package Table with customization for react projects
                 { header: "Street", accessor: "street", sortable: true },
                 { header: "City", accessor: "city", sortable: true },
                 { header: "State", accessor: "state", sortable: true },
-                { header: "Zip Code", accessor: "zipCode", sortable: true }
+                { header: "Zip Code", accessor: "zipCode", sortable: true, 
+                cell: ({ value }) => <Link className="links link " to={}>{value}</Link>}
 
 
             ]
@@ -120,6 +125,7 @@ Package Table with customization for react projects
      - *Header* corresponds to the display title of the column of the table
      - *Accessor* corresponds to the key  of the data to associate with the columns
      - *sortable* if true, it becomes possible to sort the data of this columns
+     - *cell* corresponds to the cell component to be displayed in the column (optional)
        
    ### States: 
    
