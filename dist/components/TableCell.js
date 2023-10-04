@@ -27,7 +27,8 @@ const TableCell = _ref => {
       className: "cell cell-".concat(accessor),
       key: accessor
     }, cell({
-      value: tData
+      value: tData,
+      row: data
     }));
   }
   return /*#__PURE__*/_react.default.createElement("td", {
